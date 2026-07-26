@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "AWS region"
-  default     = "ap-south-1"
+  default     = "ap-south-1b"
 }
 
 variable "instance_type" {
@@ -10,5 +10,5 @@ variable "instance_type" {
 
 variable "bucket_name" {
   description = "S3 bucket name (must be globally unique)"
-  default     = "kk-devops-project-bucket-2026"
+  default     = "kkk-devops-project-bucket-2026"
 }

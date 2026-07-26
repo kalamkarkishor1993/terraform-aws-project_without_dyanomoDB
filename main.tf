@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket       = "kk-terraform-state-bucket-2026"
+    bucket       = "kkk-terraform-state-bucket-2026"
     key          = "devops-project/terraform.tfstate"
-    region       = "ap-south-1"
+    region       = "ap-south-1b"
     use_lockfile = true
     encrypt      = true
   }
@@ -44,7 +44,7 @@ resource "aws_security_group" "web_sg" {
 
 # EC2 Instance
 resource "aws_instance" "web_server" {
-  ami                    = "ami-0e38835daf6b8a2b9" # Amazon Linux 2 - ap-south-1
+  ami                    = "ami-0e38835daf6b8a2b9" # Amazon Linux 2 - ap-south-1b
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
@@ -54,7 +54,7 @@ resource "aws_instance" "web_server" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo "<h1>Deployed via Terraform by KK</h1>" > /var/www/html/index.html
+              echo "<h1>Deployed via Terraform by KKK</h1>" > /var/www/html/index.html
               EOF
 
   tags = {
@@ -67,6 +67,6 @@ resource "aws_s3_bucket" "project_bucket" {
   bucket = var.bucket_name
 
   tags = {
-    Name = "DevOps-Practice-Bucket"
+    Name = "DevOps-Practice-Bucket1"
   }
 }
