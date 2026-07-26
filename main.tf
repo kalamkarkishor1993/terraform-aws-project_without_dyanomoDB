@@ -3,8 +3,8 @@ terraform {
     bucket       = "kkk-terraform-state-bucket-2026"
     key          = "devops-project/terraform.tfstate"
     region       = "ap-south-1b"
-    use_lockfile = true
-    encrypt      = true
+    dynamodb_table = "kkk-terraform-state-bucket-2026"
+
   }
 }
 provider "aws" {
